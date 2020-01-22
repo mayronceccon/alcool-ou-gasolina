@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="pcsg-generated-ruleset" 
+    xmlns="http://pmd.sf.net/ruleset/1.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+    xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+<description>Created with the PHP Coding Standard Generator. http://edorian.github.com/php-coding-standard-generator/
+</description>
+
+<file>.</file>
+
+<exclude-pattern>*/logs/*</exclude-pattern>
+<exclude-pattern>*/vendor/*</exclude-pattern>
+<exclude-pattern>*\.(inc|css|js)</exclude-pattern>
+
+<arg name="colors" />
+
+<!-- Check var names, but we don't want leading underscores for private vars -->
+<rule ref="Squiz.NamingConventions.ValidVariableName"/>
+<rule ref="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore">
+    <severity>0</severity>
+</rule>
+
+<!-- Private methods MUST not be prefixed with an underscore -->
+<rule ref="PSR2.Methods.MethodDeclaration.Underscore">
+   <type>error</type>
+</rule>
+
+<!-- Private properties MUST not be prefixed with an underscore -->
+<rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
+    <type>error</type>
+</rule>
+
+<rule ref="Generic.Commenting.Todo"/>
+<rule ref="Generic.ControlStructures.InlineControlStructure"/>
+<rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+<rule ref="Generic.Formatting.SpaceAfterCast"/>
+<rule ref="Generic.NamingConventions.ConstructorName"/>
+<rule ref="Generic.PHP.DeprecatedFunctions"/>
+<rule ref="Generic.PHP.LowerCaseKeyword"/>
+<rule ref="Generic.PHP.DisallowShortOpenTag"/>
+<rule ref="Generic.Strings.UnnecessaryStringConcat"/>
+
+<rule ref="Generic.Files.LineLength">
+    <properties>
+        <property name="lineLimit" value="200"/>
+        <property name="absoluteLineLimit" value="300"/>
+    </properties>
+</rule>
+
+<rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+<rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
+
+</ruleset>

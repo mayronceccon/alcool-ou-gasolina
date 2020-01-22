@@ -1,0 +1,28 @@
+{
+    "name": "mayronceccon/alcool-ou-gasolina",
+    "description": "Aplicativo responsável por calcular qual combustível tem maior custo benefício para abastecer o veículo",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Mayron Thomas Ceccon",
+            "email": "mayron.ceccon@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "APP\\" : "src"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "phpmd/phpmd": "^2.8",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --colors=always --",
+        "phpcs": "./vendor/bin/phpcs -s -d memory_limit=4000M --colors --standard=phpcs.xml --",
+        "phpcbf": "./vendor/bin/phpcbf -s -d memory_limit=4000M --colors --standard=phpcs.xml --",
+        "phpmd": "./vendor/bin/phpmd ./ text phpmd.xml"
+    }
+}
