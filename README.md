@@ -28,9 +28,14 @@ $resultado = $obj->calcular();
 echo $resultado;
 ```
 
-## Testes
+## Testes unitários
 ```bash
 composer run test
+```
+
+## Testes BDD
+```bash
+composer run behat
 ```
 
 ## Contribuição
